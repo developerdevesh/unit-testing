@@ -1,12 +1,22 @@
 package com.in28minutes.unittesting.unittesting.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@Entity
 public class Item {
 
+	@Id
 	private int id;
 	private  String name;
 	private  int price;
 	private  int quantity;
 	
+	@Transient
+	private int value;
 	
 	
 	
@@ -48,6 +58,12 @@ public class Item {
 	@Override
 	public String toString() {
 		return "Item [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + "]";
+	}
+	public int getValue() {
+		return value;
+	}
+	public void setValue(int value) {
+		this.value = value;
 	}
 	
 }
