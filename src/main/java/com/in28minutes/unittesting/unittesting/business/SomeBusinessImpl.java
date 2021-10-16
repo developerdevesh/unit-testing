@@ -1,22 +1,19 @@
 package com.in28minutes.unittesting.unittesting.business;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
+
 public class SomeBusinessImpl {
 
 	private SomeDataService someDataService;
-	
 
 	public void setSomeDataService(SomeDataService someDataService) {
 		this.someDataService = someDataService;
 	}
 
 	public int calculateSum(int[] data) {
-		int sum = 0;
-
-		for (int value : data) {
-			sum += value;
-		}
-
-		return sum;
+		// 1,2,3,4,5= 1+2+3+4+5
+		return Arrays.stream(data).reduce(Integer::sum).orElse(0);
 	}
 
 	public int calculateSumUsingDataService() {
@@ -27,8 +24,8 @@ public class SomeBusinessImpl {
 		for (int value : data) {
 			sum += value;
 		}
-		
-		//someDataService.storeSum(sum);
+
+		// someDataService.storeSum(sum);
 
 		return sum;
 	}

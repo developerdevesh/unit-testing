@@ -83,4 +83,22 @@ public class ItemControllerTest {
 		
 	}
 
+	
+	
+	//just a demo
+	@Test
+	public void dummyItem_post() throws Exception {
+		
+		RequestBuilder request = MockMvcRequestBuilders.post("/dummy-item").accept(MediaType.APPLICATION_JSON)
+				.content("[{\"id\":1,\"name\":\"Ball\",\"price\":5,\"quantity\":10}]")
+				.contentType(MediaType.APPLICATION_JSON);
+		
+		MvcResult result = mockMvc.perform(request).andExpect(MockMvcResultMatchers.status()
+				.isCreated())
+				.andExpect(MockMvcResultMatchers.content().json("{\"id\": 1,\"name\":\"Ball\",\"price\":10,\"quantity\":100}"))
+				.andReturn();
+		
+//		assertEquals("Hello World", result.getResponse().getContentAsString());
+		
+	}
 }

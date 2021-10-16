@@ -1,4 +1,4 @@
-package com.in28minutes.unittesting.unittesting.controller;
+package com.in28minutes.unittesting.unittesting.spike;
 
 import org.json.JSONException;
 import org.junit.jupiter.api.Test;
