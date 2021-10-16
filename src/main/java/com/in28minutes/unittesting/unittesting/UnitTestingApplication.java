@@ -8,6 +8,7 @@ public class UnitTestingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UnitTestingApplication.class, args);
+		System.out.println("this is an unit test application");
 	}
 
 }
