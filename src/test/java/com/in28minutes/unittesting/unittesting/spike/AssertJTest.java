@@ -13,18 +13,11 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-public class HamcrestMatchersTest {
+public class AssertJTest {
 
 	@Test
 	public void learning() {
 		List<Integer> numbers = Arrays.asList(12, 15, 45);
-		
-		//hamcrest
-		assertThat(numbers, hasSize(3));
-		assertThat(numbers, hasItems(12,15));
-		assertThat(numbers, everyItem(greaterThan(10)));
-		assertThat("ABCDE", endsWith("CDE"));
-		
 		
 		//assertJ
 		assertThat(numbers)

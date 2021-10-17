@@ -90,9 +90,9 @@ public class ListMockTest {
 		ArrayList arrayListSpy = spy(ArrayList.class);
 		arrayListSpy.add("Test1");
 		arrayListSpy.add("Test2");
-		System.out.println(arrayListSpy.get(0)); //null
-		System.out.println(arrayListSpy.size()); //0
-		when(arrayListSpy.size()).thenReturn(5);
+		System.out.println(arrayListSpy.get(0)); //Test1
+		System.out.println(arrayListSpy.size()); //2
+		when(arrayListSpy.size()).thenReturn(5);  //5
 		
 		arrayListSpy.add("Test3");
 		
